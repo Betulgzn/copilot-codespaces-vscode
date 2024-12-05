@@ -1,69 +1,203 @@
-<header>
+<!DOCTYPE html>
+<html lang="tr">
 
-<!--
-  <<< Author notes: Course header >>>
-  Read <https://skills.github.com/quickstart> for more information about how to build courses using this template.
-  Include a 1280×640 image, course name in sentence case, and a concise description in emphasis.
-  In your repository settings: enable template repository, add your 1280×640 social image, auto delete head branches.
-  Next to "About", add description & tags; disable releases, packages, & environments.
-  Add your open source license, GitHub uses the MIT license.
--->
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BorderWay - Your Pathway to a New Home</title>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.16/tailwind.min.css">
+</head>
 
-# Code with GitHub Copilot
+<body class="font-sans bg-gradient-to-b from-blue-50 to-blue-100 text-gray-800">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+    <!-- Header -->
+    <header class="flex justify-between items-center mb-8">
+      <div class="flex items-center">
+        <img src="images/Borderwaylogo.png" alt="BorderWay Logo" class="mr-4" style="max-width: 70px; height: auto;">
+        <h1 class="text-4xl font-extrabold text-white-600">BorderWay</h1>
+      </div>
+      <nav>
+        <ul class="flex space-x-6 items-center">
+          <li><a href="#" class="text-gray-700 hover:text-blue-500">Göçmenlik Rehberi</a></li>
+          <li><a href="#" class="text-gray-700 hover:text-blue-500">Hukuki Destek</a></li>
+          <li><a href="#" class="text-gray-700 hover:text-blue-500">Haberler</a></li>
+          <li class="flex items-center space-x-4">
+            <a href="#" class="text-gray-700 hover:text-blue-500">Profil</a>
+            <!-- Profile Avatar -->
+            <div class="w-10 h-10 rounded-full overflow-hidden border-2 border-gray-300">
+              <img src="images/profilavatar.png" alt="Profil Avatarı" class="w-full h-full object-cover">
+            </div>
+          </li>
+        </ul>
+      </nav>
+    </header>
 
-_GitHub Copilot can help you code by offering autocomplete-style suggestions right in VS Code and Codespaces._
+    <!-- Welcome Section -->
+    <main>
+      <section class="mb-12 text-center">
+        <h2 class="text-3xl font-bold mb-4">Hoşgeldiniz!</h2>
+        <p class="text-gray-600 mb-6 max-w-2xl mx-auto">BorderWay, göç etmek isteyen kişilere yol gösteren bir platformdur. Hukuki süreçlerden, gerekli belgelere kadar tüm aşamalarda yanınızdayız.</p>
+        <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300 ease-in-out">Kayıt Ol</a>
+      </section>
 
-</header>
+      <!-- Country Selection -->
+      <div class="bg-white shadow-lg rounded-lg p-8 mb-8">
+        <h2 class="text-2xl font-bold mb-4">Ülke Seçimi</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div>
+            <label for="from-country" class="block text-gray-700 font-medium mb-2">Vatandaşı Olduğunuz Ülke</label>
+            <select id="from-country" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring focus:ring-blue-500">
+              <option value="">Ülke Seçin</option>
+              <option value="tr">Türkiye</option>
+              <option value="us">Amerika Birleşik Devletleri</option>
+              <option value="de">Almanya</option>
+              <option value="uk">Birleşik Krallık</option>
+            </select>
+          </div>
+          <div>
+            <label for="to-country" class="block text-gray-700 font-medium mb-2">Vatandaşı Olmak İstediğiniz Ülke</label>
+            <select id="to-country" class="w-full border border-gray-300 rounded-md py-2 px-3 focus:outline-none focus:ring focus:ring-blue-500">
+              <option value="">Ülke Seçin</option>
+              <option value="tr">Türkiye</option>
+              <option value="us">Amerika Birleşik Devletleri</option>
+              <option value="de">Almanya</option>
+              <option value="uk">Birleşik Krallık</option>
+            </select>
+          </div>
+        </div>
+        <button id="viewLegalProcess" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg mt-6 transition duration-300 ease-in-out">
+          Hukuki Süreci Görüntüle
+        </button>
+      </div>
 
-<!--
-  <<< Author notes: Course start >>>
-  Include start button, a note about Actions minutes,
-  and tell the learner why they should take the course.
--->
+      <!-- Legal Process Recommendation -->
+      <div id="legal-process-recommendation" class="bg-white shadow-lg rounded-lg p-8 mb-8">
+        <h2 class="text-2xl font-bold mb-4">Hukuki Süreç Tavsiyesi</h2>
+        <p class="text-gray-600">Ülke seçimlerinizi yaptıktan sonra, burada size özel hukuki süreç tavsiyeleri gösterilecek.</p>
+      </div>
 
-## Welcome
+      <!-- Guides Section -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold mb-6 text-center">Göçmenlik Rehberi</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow duration-300">
+ 	    <img src="images/vizebasvuru.png" alt="Vize Başvuruları İkonu" class="w-8 h-8 mr-3">
+	    <div>
+            <h3 class="text-xl font-bold mb-3">Vize Başvuruları</h3>
+            <p class="text-gray-600 mb-4">Hangi vize türüne ihtiyacınız var? BorderWay size yardımcı olur.</p>
+            <a href="#" class="text-blue-500 hover:text-blue-600 font-medium">Daha Fazla Bilgi <i class="fas fa-arrow-right"></i></a>
+          </div>
+	  </div>
+          <div class="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow duration-300">
+ 	   <img src="images/belgehazırlıgı.png" alt="Belge Hazırlığı İkonu" class="w-8 h-8 mr-3">
+	   <div>
+            <h3 class="text-xl font-bold mb-3">Belge Hazırlığı</h3>
+            <p class="text-gray-600 mb-4">Gerekli belgeleri toplamada size rehberlik ediyoruz.</p>
+            <a href="#" class="text-blue-500 hover:text-blue-600 font-medium">Daha Fazla Bilgi <i class="fas fa-arrow-right"></i></a>
+           </div>
+	  </div>
+          <div class="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow duration-300">
+          <img src="images/hukukianaliz.png" alt="Hukuki Riskler İkonu" class="w-8 h-8 mr-3">
+          <div>
+            <h3 class="text-xl font-bold mb-3">Hukuki Riskler</h3>
+            <p class="text-gray-600 mb-4">Hukuki riskleri en aza indirmek için size yardımcı oluyoruz.</p>
+            <a href="#" class="text-blue-500 hover:text-blue-600 font-medium">Daha Fazla Bilgi <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </section>
 
-GitHub Copilot can help you code by offering autocomplete-style suggestions. You can learn how GitHub Copilot works, and what to consider while using GitHub Copilot. GitHub Copilot analyzes the context in the file you are editing, as well as related files, and offers suggestions from within your text editor. GitHub Copilot is powered by OpenAI Codex, a new AI system created by OpenAI.
+      <!-- Legal Support Section -->
+      <section class="mb-12 text-center">
+        <h2 class="text-3xl font-bold mb-6">Hukuki Destek</h2>
+        <div class="bg-white shadow-lg rounded-lg p-8">
+          <h3 class="text-xl font-bold mb-4">Uzman Avukatlarla Çalışın</h3>
+          <p class="text-gray-600 mb-6">BorderWay, her ülke için atanmış hukuki ekiplerle iletişim olanağı sunar.</p>
+          <a href="#" class="bg-blue-600 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg shadow-lg transition duration-300 ease-in-out">Hukuki Destek Alın</a>
+        </div>
+      </section>
 
-- **Who this is for**: Developers, DevOps Engineers, Software development managers, Testers.
-- **What you'll learn**: How to install Copilot into a Codespace, accept suggestions from code, accept suggestions from comments.
-- **What you'll build**: Javascript files that will have code generated by Copilot AI for code and comment suggestions.
-- **Prerequisites**: To use GitHub Copilot you must have an active GitHub Copilot subscription. Sign up for 30 days free [Copilot](https://github.com/settings/copilot).
-- **Timing**: This course can be completed in under an hour.
+      <!-- News Section -->
+      <section class="mb-12">
+        <h2 class="text-3xl font-bold mb-6 text-center">Haberler ve Güncellemeler</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div class="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow duration-300">
+            <img src="images/Dubai-Gaming-Visa.jpg" alt="Haber Görseli" class="mb-4 rounded">
+            <h3 class="text-xl font-bold mb-2">Dubai Gaming Visa ile Dijital Yaratıcılığa Yeni Bir Boyut: 10 Yıl Süreli Oturum İzni</h3>
+            <p class="text-gray-600">Dubai, oyun geliştiricileri ve dijital içerik üreticileri için yepyeni bir fırsat sunuyor! Dubai Gaming Visa ile 10 yıl süreyle oturum izni alabilir ve Dubai'nin büyüyen oyun sektörüne katılabilirsiniz. Yaratıcı projelerinizi hayata geçirmek için şimdi tam zamanı!</p>
+            <a href="#" class="text-blue-500 hover:text-blue-600 font-medium">Daha Fazla Bilgi <i class="fas fa-arrow-right"></i></a>
+          </div>
+          <div class="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow duration-300">
+            <img src="images/ucakhaber.jpg" alt="Haber Görseli" class="mb-4 rounded">
+            <h3 class="text-xl font-bold mb-2">Vatandaşlık Başvurusu Kolaylaştırılıyor: Yeni Düzenlemelerle Süreç Hızlanıyor</h3>
+            <p class="text-gray-600">Bazı ülkeler, vatandaşlık başvuru süreçlerini dijitalleştirerek ve işlemleri basitleştirerek önemli değişiklikler yapıyor. Almanya ve Portekiz gibi ülkeler, başvuru sahiplerine daha hızlı ve şeffaf bir süreç sunmak için dijital platformlar geliştirdi. Bu sayede başvurular daha verimli bir şekilde işleniyor ve bürokratik engeller en aza indiriliyor.</p>
+            <a href="#" class="text-blue-500 hover:text-blue-600 font-medium">Daha Fazla Bilgi <i class="fas fa-arrow-right"></i></a>
+          </div>
+          <div class="bg-white shadow-lg rounded-lg p-6 hover:shadow-xl transition-shadow duration-300">
+            <img src="images/GoldenVisa.jpg" alt="Haber Görseli" class="mb-4 rounded">
+            <h3 class="text-xl font-bold mb-2">Golden Visa Programı ile seyahat artık daha kolay!</h3>
+            <p class="text-gray-600">Golden Visa Programı, yatırımcılar ve aileleri için yeni bir dönemi başlatıyor! Yatırım yaparak, uzun süreli oturum izni ve hatta vatandaşlık fırsatı elde etmek isteyenler için önemli bir fırsat sunuluyor. Bu program sayesinde, seyahat ve ikamet işlemleri daha hızlı ve kolay hale gelirken, dünya genelinde yeni fırsatlar ve avantajlar kapılarını aralıyor</p>
+            <a href="#" class="text-blue-500 hover:text-blue-600 font-medium">Daha Fazla Bilgi <i class="fas fa-arrow-right"></i></a>
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
 
-### How to start this course
+  <script>
+    document.getElementById('viewLegalProcess').addEventListener('click', function() {
+      const fromCountry = document.getElementById('from-country').value;
+      const toCountry = document.getElementById('to-country').value;
+      const recommendationDiv = document.getElementById('legal-process-recommendation');
+      
+      // Temel kontrol
+      if (!fromCountry || !toCountry) {
+        alert("Lütfen hem vatandaşı olduğunuz hem de gitmek istediğiniz ülkeyi seçin.");
+        return;
+      }
 
-<!-- For start course, run in JavaScript:
-'https://github.com/new?' + new URLSearchParams({
-  template_owner: 'skills',
-  template_name: 'copilot-codespaces-vscode',
-  owner: '@me',
-  name: 'skills-copilot-codespaces-vscode',
-  description: 'My clone repository',
-  visibility: 'public',
-}).toString()
--->
+      // Örnek bir öneri, gerçek uygulama için burayı dinamik hale getirmelisiniz
+      recommendationDiv.innerHTML = <h2 class="text-2xl font-bold mb-4">Hukuki Süreç Tavsiyesi</h2>
+                                      <p class="text-gray-600">Seçtiğiniz ülkeler için özel hukuki süreç tavsiyeleri burada yer alacak.</p>;
+      recommendationDiv.style.display = "block";
+    });
+  </script>
+<!-- Canlı Destek İkonu -->
+<div id="live-chat-icon" class="fixed bottom-8 right-8 w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center shadow-lg cursor-pointer z-50">
+  <i class="fas fa-comments text-white text-2xl"></i>
+</div>
 
-[![start-course](https://user-images.githubusercontent.com/1221423/235727646-4a590299-ffe5-480d-8cd5-8194ea184546.svg)](https://github.com/new?template_owner=skills&template_name=copilot-codespaces-vscode&owner=%40me&name=skills-copilot-codespaces-vscode&description=My+clone+repository&visibility=public)
+<!-- Canlı Destek İkonu -->
+<div id="live-chat-icon" class="fixed bottom-8 right-8 w-16 h-16 bg-blue-600 rounded-full flex items-center justify-center shadow-lg cursor-pointer z-50">
+  <i class="fas fa-comments text-white text-2xl"></i>
+</div>
 
-1. Right-click **Start course** and open the link in a new tab.
-2. In the new tab, most of the prompts will automatically fill in for you.
-   - For owner, choose your personal account or an organization to host the repository.
-   - We recommend creating a public repository, as private repositories will [use Actions minutes](https://docs.github.com/en/billing/managing-billing-for-github-actions/about-billing-for-github-actions).
-   - Scroll down and click the **Create repository** button at the bottom of the form.
-3. After your new repository is created, wait about 20 seconds, then refresh the page. Follow the step-by-step instructions in the new repository's README.
+<!-- Canlı Destek Penceresi -->
+<div id="live-chat-window" class="fixed bottom-20 right-8 bg-white w-80 h-96 shadow-lg rounded-lg hidden z-50">
+  <div class="flex justify-between items-center bg-blue-600 text-white p-4 rounded-t-lg">
+    <h3 class="text-lg font-semibold">Canlı Destek</h3>
+    <button id="close-chat" class="text-xl">&times;</button>
+  </div>
+  <div class="p-4 text-gray-700 overflow-y-auto h-[70%]">
+    <p>Merhaba! Size nasıl yardımcı olabilirim?</p>
+  </div>
+  <div class="p-4 border-t">
+    <input type="text" placeholder="Mesajınızı yazın..." class="w-full p-2 border rounded-lg focus:outline-none">
+  </div>
+</div>
 
-<footer>
+<style>
+  #live-chat-icon {
+    transition: transform 0.3s ease-in-out, background-color 0.3s;
+  }
+  #live-chat-icon:hover {
+    transform: scale(1.1);
+    background-color: #2563eb;
+  }
+  #live-chat-window.hidden {
+    display: none;
+  }
+</style>
+</body>
 
-<!--
-  <<< Author notes: Footer >>>
-  Add a link to get support, GitHub status page, code of conduct, license link.
--->
-
----
-
-Get help: [Post in our discussion board](https://github.com/orgs/skills/discussions/categories/code-with-copilot) &bull; [Review the GitHub status page](https://www.githubstatus.com/)
-
-&copy; 2023 GitHub &bull; [Code of Conduct](https://www.contributor-covenant.org/version/2/1/code_of_conduct/code_of_conduct.md) &bull; [MIT License](https://gh.io/mit)
-
-</footer>
+</html>
